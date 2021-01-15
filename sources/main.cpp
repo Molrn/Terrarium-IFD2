@@ -1,18 +1,4 @@
-#include <Wire.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
-#include <Adafruit_SPIDevice.h>
-#include <SimpleDHT.h>
-#include <Arduino.h>
-
-#define SCREEN_WIDTH 128
-#define SCREEN_HEIGHT 64
-#define OLED_RESET -1 
-#define LOGO_HEIGHT   16
-#define LOGO_WIDTH    16
-#define ventil_set 7
-#define ventil_unset 12
-#define buzzer 11
+#include "ATMega.h"
 
 byte variable_menu=0,boutonplusavant=1,boutonmoinsavant=1,boutonvalideravant=1,buzzer_actif=0,variableok=0;
 byte mode=1, light=0;
@@ -55,10 +41,6 @@ void setup() {
     display.setTextSize(5);
     display.println("GO !");
     display.display();
-}
-
-void setCursor(int (tailleactuelle), int (numeroligne)){
-    display.setCursor(0, 0);
 }
 
 void affichagevariable(float (variable),const char* (unite), int (taille)){
