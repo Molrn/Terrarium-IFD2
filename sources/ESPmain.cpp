@@ -43,7 +43,6 @@ void serialEvent() {
             inString = "";
         }
     }
-  
 }
 
 void alive() {
@@ -54,7 +53,7 @@ void alive() {
 }
 
 void setup() {
-    Serial.begin(115200);//vers ATMega
+    Serial.begin(115200);
     Serial.println("[DEBUG#ESP Welcome]");
     WiFi.begin(ssid, pass);
     client.begin(hostname, 1883, wificlient);
